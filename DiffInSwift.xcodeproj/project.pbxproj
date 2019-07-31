@@ -13,6 +13,11 @@
 		2B6F2B0D22F15B6D00BB6CD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B6F2B0C22F15B6D00BB6CD9 /* Assets.xcassets */; };
 		2B6F2B1022F15B6D00BB6CD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B6F2B0E22F15B6D00BB6CD9 /* LaunchScreen.storyboard */; };
 		2B6F2B1B22F15B6E00BB6CD9 /* DiffInSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F2B1A22F15B6E00BB6CD9 /* DiffInSwiftTests.swift */; };
+		2B6F2B3022F15DD600BB6CD9 /* WagnerFischer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F2B2E22F15DD600BB6CD9 /* WagnerFischer.swift */; };
+		2B6F2B3122F15DD600BB6CD9 /* DiffAlgorithmProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F2B2F22F15DD600BB6CD9 /* DiffAlgorithmProtocol.swift */; };
+		2B6F2B3322F1651100BB6CD9 /* WagnerFischerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F2B3222F1651100BB6CD9 /* WagnerFischerTest.swift */; };
+		2B6F2B3422F1654800BB6CD9 /* DiffAlgorithmProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F2B2F22F15DD600BB6CD9 /* DiffAlgorithmProtocol.swift */; };
+		2B6F2B3522F1654800BB6CD9 /* WagnerFischer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F2B2E22F15DD600BB6CD9 /* WagnerFischer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,9 @@
 		2B6F2B1622F15B6E00BB6CD9 /* DiffInSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiffInSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B6F2B1A22F15B6E00BB6CD9 /* DiffInSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffInSwiftTests.swift; sourceTree = "<group>"; };
 		2B6F2B1C22F15B6E00BB6CD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B6F2B2E22F15DD600BB6CD9 /* WagnerFischer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WagnerFischer.swift; sourceTree = "<group>"; };
+		2B6F2B2F22F15DD600BB6CD9 /* DiffAlgorithmProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffAlgorithmProtocol.swift; sourceTree = "<group>"; };
+		2B6F2B3222F1651100BB6CD9 /* WagnerFischerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WagnerFischerTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,7 @@
 		2B6F2B0422F15B6D00BB6CD9 /* DiffInSwift */ = {
 			isa = PBXGroup;
 			children = (
+				2B6F2B2D22F15DC400BB6CD9 /* Diff Algorithm */,
 				2B6F2B0522F15B6D00BB6CD9 /* AppDelegate.swift */,
 				2B6F2B0722F15B6D00BB6CD9 /* ViewController.swift */,
 				2B6F2B0922F15B6D00BB6CD9 /* Main.storyboard */,
@@ -90,10 +99,20 @@
 		2B6F2B1922F15B6E00BB6CD9 /* DiffInSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				2B6F2B3222F1651100BB6CD9 /* WagnerFischerTest.swift */,
 				2B6F2B1A22F15B6E00BB6CD9 /* DiffInSwiftTests.swift */,
 				2B6F2B1C22F15B6E00BB6CD9 /* Info.plist */,
 			);
 			path = DiffInSwiftTests;
+			sourceTree = "<group>";
+		};
+		2B6F2B2D22F15DC400BB6CD9 /* Diff Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				2B6F2B2F22F15DD600BB6CD9 /* DiffAlgorithmProtocol.swift */,
+				2B6F2B2E22F15DD600BB6CD9 /* WagnerFischer.swift */,
+			);
+			path = "Diff Algorithm";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +217,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B6F2B0822F15B6D00BB6CD9 /* ViewController.swift in Sources */,
+				2B6F2B3122F15DD600BB6CD9 /* DiffAlgorithmProtocol.swift in Sources */,
+				2B6F2B3022F15DD600BB6CD9 /* WagnerFischer.swift in Sources */,
 				2B6F2B0622F15B6D00BB6CD9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,6 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B6F2B3322F1651100BB6CD9 /* WagnerFischerTest.swift in Sources */,
+				2B6F2B3422F1654800BB6CD9 /* DiffAlgorithmProtocol.swift in Sources */,
+				2B6F2B3522F1654800BB6CD9 /* WagnerFischer.swift in Sources */,
 				2B6F2B1B22F15B6E00BB6CD9 /* DiffInSwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
