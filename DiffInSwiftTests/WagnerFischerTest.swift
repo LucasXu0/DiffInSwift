@@ -172,6 +172,25 @@ class WagnerFischerTest: XCTestCase {
         )
     }
 
+    func testExample() {
+        let o = "ABCE".toArray
+        let n = "ACDF".toArray
+
+        let res = diff(o, n)
+
+        let exp = [
+            Change.delete((1, "B")),
+            Change.insert((2, "D")),
+            Change.substitute((3, "E", "F")),
+        ]
+
+        XCTAssert(
+            res == exp
+        )
+
+        prettyPrint(res)
+    }
+
     func testLargeData() {
 //        let largeRange = (0..<10000)
 //        let o = largeRange.map(String.init)
@@ -183,5 +202,11 @@ class WagnerFischerTest: XCTestCase {
     private func diff<T: Hashable>(_ o: [T], _ n: [T]) -> [Change<T>] {
         let wagnerFischer = WagnerFischer<T>()
         return wagnerFischer.diff(o: o, n: n)
+    }
+
+    private func prettyPrint<T: Hashable>(_ changeSet: [Change<T>]) {
+        changeSet.enumerated().forEach { (index, elm) in
+            print("\(index): \(elm)")
+        }
     }
 }

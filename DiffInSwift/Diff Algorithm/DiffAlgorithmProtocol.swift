@@ -30,6 +30,19 @@ enum Change<T: Equatable> {
     case substitute(SubstituteItem)
 }
 
+extension Change: CustomDebugStringConvertible {
+    var debugDescription: String {
+        switch self {
+        case .insert(let insertItem):
+            return "insert \(insertItem.item) to \(insertItem.index)"
+        case .delete(let deleteItem):
+            return "delete \(deleteItem.item) in \(deleteItem.index)"
+        case .substitute(let substituteItem):
+            return "substitute \(substituteItem.from) for \(substituteItem.to) in \(substituteItem.index)"
+        }
+    }
+}
+
 extension Change: Equatable {
     static func == (lhs: Change<T>, rhs: Change<T>) -> Bool {
         switch (lhs, rhs) {
