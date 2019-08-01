@@ -1,5 +1,5 @@
 //
-//  Heckel.swift
+//  PaulHeckel.swift
 //  DiffInSwift
 //
 //  Created by xurunkang on 2019/8/1.
@@ -23,7 +23,7 @@ extension Reference: CustomDebugStringConvertible {
     }
 }
 
-class Heckel<T: Hashable>: DiffAlgorithm {
+class PaulHeckel<T: Hashable>: DiffAlgorithm {
 
     typealias T = T
 
@@ -43,7 +43,7 @@ class Heckel<T: Hashable>: DiffAlgorithm {
     }
 }
 
-private extension Heckel {
+private extension PaulHeckel {
 
     // 1. build new references
     // the new references is corresponding to new array

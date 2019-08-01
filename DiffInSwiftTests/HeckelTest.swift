@@ -1,5 +1,5 @@
 //
-//  HeckelTest.swift
+//  PaulHeckelTest.swift
 //  DiffInSwiftTests
 //
 //  Created by xurunkang on 2019/8/1.
@@ -13,7 +13,7 @@ private extension String {
     }
 }
 
-class HeckelTest: XCTestCase {
+class PaulHeckelTest: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -195,7 +195,7 @@ class HeckelTest: XCTestCase {
     }
 
     private func diff<T: Hashable>(_ o: [T], _ n: [T]) -> [Change<T>] {
-        let heckel = Heckel<T>()
-        return heckel.diff(o: o, n: n)
+        let paulHeckel = PaulHeckel<T>()
+        return paulHeckel.diff(o: o, n: n)
     }
 }
