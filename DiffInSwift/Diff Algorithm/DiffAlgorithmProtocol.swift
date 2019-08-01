@@ -24,10 +24,12 @@ enum Change<T: Equatable> {
     typealias InsertItem = (index: Int, item: T)
     typealias DeleteItem = (index: Int, item: T)
     typealias SubstituteItem = (index: Int, from: T, to: T)
+    typealias MoveItem = (from: Int, to: Int, item: T)
 
     case insert(InsertItem)
     case delete(DeleteItem)
     case substitute(SubstituteItem)
+    case move(MoveItem)
 }
 
 extension Change: CustomDebugStringConvertible {
@@ -39,6 +41,8 @@ extension Change: CustomDebugStringConvertible {
             return "delete \(deleteItem.item) in \(deleteItem.index)"
         case .substitute(let substituteItem):
             return "substitute \(substituteItem.from) for \(substituteItem.to) in \(substituteItem.index)"
+        case .move(let moveItem):
+            return "move \(moveItem.item) from \(moveItem.from) to \(moveItem.to)"
         }
     }
 }
@@ -47,21 +51,15 @@ extension Change: Equatable {
     static func == (lhs: Change<T>, rhs: Change<T>) -> Bool {
         switch (lhs, rhs) {
         case (.insert(let t1), .insert(let t2)):
-            if t1 == t2 {
-                return true
-            }
+            return t1 == t2
         case (.delete(let t1), .delete(let t2)):
-            if t1 == t2 {
-                return true
-            }
+            return t1 == t2
         case (.substitute(let t1), .substitute(let t2)):
-            if t1 == t2 {
-                return true
-            }
+            return t1 == t2
+        case (.move(let t1), .move(let t2)):
+            return t1 == t2
         default:
             return false
         }
-
-        return false
     }
 }

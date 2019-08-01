@@ -1,8 +1,8 @@
 //
-//  WagnerFischerTest.swift
+//  HeckelTest.swift
 //  DiffInSwiftTests
 //
-//  Created by xurunkang on 2019/7/31.
+//  Created by xurunkang on 2019/8/1.
 //  Copyright © 2019 xurunkang. All rights reserved.
 
 import XCTest
@@ -13,7 +13,7 @@ private extension String {
     }
 }
 
-class WagnerFischerTest: XCTestCase {
+class HeckelTest: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -60,9 +60,12 @@ class WagnerFischerTest: XCTestCase {
         let res = diff(o, n)
 
         let exp = [
-            Change.substitute((0, "A", "a")),
-            Change.substitute((1, "B", "b")),
-            Change.substitute((2, "C", "c"))
+            Change.delete((0, "A")),
+            Change.delete((1, "B")),
+            Change.delete((2, "C")),
+            Change.insert((0, "a")),
+            Change.insert((1, "b")),
+            Change.insert((2, "c"))
         ]
 
         XCTAssert(res == exp)
@@ -75,8 +78,9 @@ class WagnerFischerTest: XCTestCase {
         let res = diff(o, n)
 
         let exp = [
-            Change.substitute((1, "B", "b")),
-            Change.delete((2, "c"))
+            Change.delete((1, "B")),
+            Change.delete((2, "c")),
+            Change.insert((1, "b"))
         ]
 
         XCTAssert(res == exp)
@@ -89,8 +93,8 @@ class WagnerFischerTest: XCTestCase {
         let res = diff(o, n)
 
         let exp = [
-            Change.substitute((0, "a", "c")),
-            Change.substitute((2, "c", "a"))
+            Change.move((2, 0, "c")),
+            Change.move((0, 2, "a"))
         ]
 
         XCTAssert(res == exp)
@@ -103,9 +107,11 @@ class WagnerFischerTest: XCTestCase {
         let res = diff(o, n)
 
         let exp = [
-            Change.substitute((0, "s", "k")),
-            Change.substitute((4, "i", "e")),
-            Change.delete((6, "g"))
+            Change.delete((0, "s")),
+            Change.delete((4, "i")),
+            Change.delete((6, "g")),
+            Change.insert((0, "k")),
+            Change.insert((4, "e"))
         ]
 
         XCTAssert(res == exp)
@@ -133,7 +139,8 @@ class WagnerFischerTest: XCTestCase {
         let res = diff(o, n)
 
         let exp = [
-            Change.substitute((1, "i", "a")),
+            Change.delete((1, "i")),
+            Change.insert((1, "a"))
         ]
 
         XCTAssert(res == exp)
@@ -162,9 +169,10 @@ class WagnerFischerTest: XCTestCase {
         let res = diff(o, n)
 
         let exp = [
-            Change.substitute((0, "a", "d")),
+            Change.delete((0, "a")),
             Change.delete((1, "b")),
-            Change.delete((2, "c"))
+            Change.delete((2, "c")),
+            Change.insert((0, "d")),
         ]
 
         XCTAssert(res == exp)
@@ -178,23 +186,16 @@ class WagnerFischerTest: XCTestCase {
 
         let exp = [
             Change.delete((1, "B")),
-            Change.substitute((2, "E", "D")),
-            Change.insert((3, "F")),
+            Change.delete((3, "E")),
+            Change.insert((2, "D")),
+            Change.insert((3, "F"))
         ]
 
         XCTAssert(res == exp)
     }
 
-    func testLargeData() {
-//        let largeRange = (0..<10000)
-//        let o = largeRange.map(String.init)
-//        let n = largeRange.reversed().map(String.init)
-//
-//        let res = diff(o, n)
-    }
-
     private func diff<T: Hashable>(_ o: [T], _ n: [T]) -> [Change<T>] {
-        let wagnerFischer = WagnerFischer<T>()
-        return wagnerFischer.diff(o: o, n: n)
+        let heckel = Heckel<T>()
+        return heckel.diff(o: o, n: n)
     }
 }

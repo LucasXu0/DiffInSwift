@@ -18,6 +18,12 @@
 		2B6F2B3322F1651100BB6CD9 /* WagnerFischerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F2B3222F1651100BB6CD9 /* WagnerFischerTest.swift */; };
 		2B6F2B3422F1654800BB6CD9 /* DiffAlgorithmProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F2B2F22F15DD600BB6CD9 /* DiffAlgorithmProtocol.swift */; };
 		2B6F2B3522F1654800BB6CD9 /* WagnerFischer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F2B2E22F15DD600BB6CD9 /* WagnerFischer.swift */; };
+		2B8D919B22F2C16500266A3B /* Heckel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D919A22F2C16500266A3B /* Heckel.swift */; };
+		2B8D919E22F2C38700266A3B /* TableEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D919D22F2C38700266A3B /* TableEntry.swift */; };
+		2B8D91A022F2D90300266A3B /* HeckelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D919F22F2D90300266A3B /* HeckelTest.swift */; };
+		2B8D91A222F2D95900266A3B /* PrettyPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D91A122F2D95900266A3B /* PrettyPrint.swift */; };
+		2B8D91A322F2DAC100266A3B /* Heckel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D919A22F2C16500266A3B /* Heckel.swift */; };
+		2B8D91A422F2DAC500266A3B /* TableEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D919D22F2C38700266A3B /* TableEntry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,10 @@
 		2B6F2B2E22F15DD600BB6CD9 /* WagnerFischer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WagnerFischer.swift; sourceTree = "<group>"; };
 		2B6F2B2F22F15DD600BB6CD9 /* DiffAlgorithmProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffAlgorithmProtocol.swift; sourceTree = "<group>"; };
 		2B6F2B3222F1651100BB6CD9 /* WagnerFischerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WagnerFischerTest.swift; sourceTree = "<group>"; };
+		2B8D919A22F2C16500266A3B /* Heckel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heckel.swift; sourceTree = "<group>"; };
+		2B8D919D22F2C38700266A3B /* TableEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableEntry.swift; sourceTree = "<group>"; };
+		2B8D919F22F2D90300266A3B /* HeckelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeckelTest.swift; sourceTree = "<group>"; };
+		2B8D91A122F2D95900266A3B /* PrettyPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyPrint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +109,11 @@
 		2B6F2B1922F15B6E00BB6CD9 /* DiffInSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				2B8D919F22F2D90300266A3B /* HeckelTest.swift */,
 				2B6F2B3222F1651100BB6CD9 /* WagnerFischerTest.swift */,
 				2B6F2B1A22F15B6E00BB6CD9 /* DiffInSwiftTests.swift */,
 				2B6F2B1C22F15B6E00BB6CD9 /* Info.plist */,
+				2B8D91A122F2D95900266A3B /* PrettyPrint.swift */,
 			);
 			path = DiffInSwiftTests;
 			sourceTree = "<group>";
@@ -109,10 +121,20 @@
 		2B6F2B2D22F15DC400BB6CD9 /* Diff Algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				2B8D919C22F2C37900266A3B /* Heckel */,
 				2B6F2B2F22F15DD600BB6CD9 /* DiffAlgorithmProtocol.swift */,
 				2B6F2B2E22F15DD600BB6CD9 /* WagnerFischer.swift */,
 			);
 			path = "Diff Algorithm";
+			sourceTree = "<group>";
+		};
+		2B8D919C22F2C37900266A3B /* Heckel */ = {
+			isa = PBXGroup;
+			children = (
+				2B8D919A22F2C16500266A3B /* Heckel.swift */,
+				2B8D919D22F2C38700266A3B /* TableEntry.swift */,
+			);
+			path = Heckel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,7 +241,9 @@
 				2B6F2B0822F15B6D00BB6CD9 /* ViewController.swift in Sources */,
 				2B6F2B3122F15DD600BB6CD9 /* DiffAlgorithmProtocol.swift in Sources */,
 				2B6F2B3022F15DD600BB6CD9 /* WagnerFischer.swift in Sources */,
+				2B8D919B22F2C16500266A3B /* Heckel.swift in Sources */,
 				2B6F2B0622F15B6D00BB6CD9 /* AppDelegate.swift in Sources */,
+				2B8D919E22F2C38700266A3B /* TableEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,10 +251,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B8D91A322F2DAC100266A3B /* Heckel.swift in Sources */,
 				2B6F2B3322F1651100BB6CD9 /* WagnerFischerTest.swift in Sources */,
 				2B6F2B3422F1654800BB6CD9 /* DiffAlgorithmProtocol.swift in Sources */,
+				2B8D91A022F2D90300266A3B /* HeckelTest.swift in Sources */,
 				2B6F2B3522F1654800BB6CD9 /* WagnerFischer.swift in Sources */,
+				2B8D91A422F2DAC500266A3B /* TableEntry.swift in Sources */,
 				2B6F2B1B22F15B6E00BB6CD9 /* DiffInSwiftTests.swift in Sources */,
+				2B8D91A222F2D95900266A3B /* PrettyPrint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
