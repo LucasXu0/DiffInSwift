@@ -194,6 +194,40 @@ class PaulHeckelTest: XCTestCase {
         XCTAssert(res == exp)
     }
 
+    func testDeleteInsertMove() {
+        let o = "ABCGE".toArray
+        let n = "AGCDF".toArray
+
+        let res = diff(o, n)
+
+        let exp = [
+            Change.delete((1, "B")),
+            Change.delete((4, "E")),
+            Change.move((3, 1, "G")),
+            Change.move((2, 2, "C")),
+            Change.insert((3, "D")),
+            Change.insert((4, "F"))
+        ]
+
+        XCTAssert(res == exp)
+    }
+
+    func testMove() {
+        let o = "ABCD".toArray
+        let n = "DABC".toArray
+
+        let res = diff(o, n)
+
+        let exp = [
+            Change.move((3, 0, "D")),
+            Change.move((0, 1, "A")),
+            Change.move((1, 2, "B")),
+            Change.move((2, 3, "C"))
+        ]
+
+        XCTAssert(res == exp)
+    }
+
     private func diff<T: Hashable>(_ o: [T], _ n: [T]) -> [Change<T>] {
         let paulHeckel = PaulHeckel<T>()
         return paulHeckel.diff(o: o, n: n)
