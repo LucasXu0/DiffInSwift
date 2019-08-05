@@ -65,6 +65,7 @@ private extension PaulHeckel {
     }
 
     // 2. build old references
+    // the new references is corresponding to new array
     private func secondBuildORS(_ o: [T]) {
 
         // old array -> old references
